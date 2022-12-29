@@ -20,6 +20,7 @@ local function page(tune,text, src)
 
     if(pagerTune == nil) then
         TriggerClientEvent('QBCore:Notify', src, "The paged channel does not exist.", 'error')
+        return false;
     end
 
     local Player = QBCore.Functions.GetPlayer(src)
