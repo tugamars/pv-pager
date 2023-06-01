@@ -49,6 +49,8 @@ local function page(tune,text, src)
             return false;
         end
     end
+    
+    if pagerTune.jobPermissions == nil and pagerTune.discordPermissions == nil then authorized=true end
 
     if authorized then
         local players = QBCore.Functions.GetQBPlayers()
