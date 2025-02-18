@@ -9,6 +9,7 @@ author 'tugamars'
 shared_script "config.lua"
 
 server_scripts {
+    "config_server.lua",
     "server.lua",
 }
 
