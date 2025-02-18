@@ -70,8 +70,10 @@ local function page(tune,text, src)
         end
     end
 
-    for k,v in ipairs(pagerTune.webhooks) do
-        sendToDiscord(k,pagerTune.title,text,v);
+    if(Config.Webhooks ~= nil and Config.Webhooks[tune] ~= nil) then
+        for k,v in ipairs(Config.Webhooks[tune]) do
+            sendToDiscord(k,pagerTune.title,text,v);
+        end
     end
 
     sendToDiscord(Config.LogWebhook,pagerTune.title,text, "New pager!",src,true);
